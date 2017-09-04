@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home_task.iml" filepath="$PROJECT_DIR$/.idea/modules/home_task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home_task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/home_task_main.iml" group="home_task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home_task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/home_task_test.iml" group="home_task" />
+    </modules>
+  </component>
+</project>
