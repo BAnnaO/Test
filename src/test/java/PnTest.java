@@ -1,4 +1,5 @@
 
+import org.junit.Ignore;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -11,9 +12,9 @@ import java.util.Collections;
 
 
 public class PnTest extends BaseTest {
+
     MainPage mainPage ;
-    ComputerPage computerPage;
-    RemontPage remontPage;
+
 
 
     @BeforeClass(alwaysRun= true)
@@ -26,14 +27,14 @@ public class PnTest extends BaseTest {
 
             mainPage.clickOncategoryButtonCompuer();
             mainPage.goToComputerPage();
-            computerPage = mainPage.goToComputerPage();
+        ComputerPage computerPage = mainPage.goToComputerPage();
             Assert.assertEquals(computerPage.itServiceString.getText(),"IT услуги");
     }
 //This is a second test
-    @Test
+    @Test @Ignore
     public void secondTest(){
         mainPage.clickOncategoryButtonRemont();
-        remontPage = mainPage.goToRemontPage();
+        RemontPage remontPage = mainPage.goToRemontPage();
         remontPage.clickOnCategoryPlitka();
         remontPage.clickOnSorting();
         remontPage.clickOnSortPrice();
@@ -42,6 +43,39 @@ public class PnTest extends BaseTest {
         Collections.sort(sortedPrices);
 
         Assert.assertEquals(prises,sortedPrices);
+    }
+
+    @Test
+    public void thriedTest(){
+        mainPage.clickOncategoryButtonKomods();
+        KomodPage komodPage = mainPage.goToKomodPage();
+        try {
+            komodPage.clickOnpopularProducer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String popProd = komodPage.getCurrentProducer();
+        for (String str:komodPage.getItemsList()){
+            System.out.println(popProd+"  "+str);
+            Assert.assertTrue(str.contains(popProd));
+
+        }
+
+    }
+
+    @Test
+    public void fourthTest(){
+        mainPage.clickOncategoryButtonKomods();
+        KomodPage komodPage = mainPage.goToKomodPage();
+        int NumOfItems=komodPage.getNumOfItems();
+        try {
+            komodPage.clickOnpopularProducer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals(NumOfItems,komodPage.numOfitems);
+
+
     }
 
     

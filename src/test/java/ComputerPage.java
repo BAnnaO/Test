@@ -27,7 +27,11 @@ public class ComputerPage extends AbstractPage {
     protected WebElement itServiceHref;
 
     public void clickOncategoryButton(){
-        clicker.elementclickerWebElement(categoryButton);
+        try {
+            clicker.elementclickerWebElement(categoryButton);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public WebElement getItServiceHref(){return itServiceHref;}
     public WebElement getItServiceString(){return itServiceString;}

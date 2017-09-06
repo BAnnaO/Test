@@ -18,6 +18,7 @@ public class RemontPage extends AbstractPage {
     private final static String CATEGORY_PLITKA="//a[@href='/ct/4201/']";
     private final static String SORTING="//li[@class='dropdown dropdown-sorting']";
     private final static String SORT_PRICE="//a[@href='/ct/4201/?sort=price']";
+    private static final String NEXT_PAGE="//link[@rel='next']";
 
     private static String PRICE1 = "//ul[@class='catalog-list']/li";
     private static String PRICE2 = "//div[@class='price']//strong";
@@ -32,14 +33,26 @@ public class RemontPage extends AbstractPage {
     protected WebElement sortPrice;
 
     public void clickOnCategoryPlitka(){
-        clicker.elementclickerWebElement(categoryPlitka);
+        try {
+            clicker.elementclickerWebElement(categoryPlitka);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public void clickOnSorting(){
-        clicker.elementclickerWebElement(sorting);
+        try {
+            clicker.elementclickerWebElement(sorting);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void clickOnSortPrice(){
-        clicker.elementclickerWebElement(sortPrice);
+        try {
+            clicker.elementclickerWebElement(sortPrice);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<Integer> getAllPrises()

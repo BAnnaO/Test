@@ -7,11 +7,9 @@ public class Clicker {
         this.driver=driver;
     }
 
-    public void elementclickerWebElement(WebElement element){
-        try{
+    public void elementclickerWebElement(WebElement element) throws Exception{
+
             element.click();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 }
